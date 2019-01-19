@@ -1,0 +1,17 @@
+http:
+    address: 0.0.0.0:80
+
+    maxRequest: 50
+
+    uploads:
+        forbit: []
+
+    workers:
+        command: "php /app/worker.php pipes"
+        relay:   "pipes"
+        pool:
+            numWorkers: 2
+            maxJobs: 1
+            allocateTimeout: 30
+            destroyTimeout: 10
+
